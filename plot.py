@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 def import_and_clean_csv(csv):
     """
     :param csv: string describing path to csv to be imported
@@ -22,3 +23,26 @@ to validate above operation worked
 print region_data.head()
 print region_data.dtypes
 '''
+#todo plot by school on horizontal axis,vertical values , color by region,grid by levels of salary
+
+print region_data.info()
+
+"""
+School Name                          273 non-null object
+Region                               273 non-null object
+Starting Median Salary               273 non-null float64
+Mid-Career Median Salary             273 non-null float64
+Mid-Career 10th Percentile Salary    273 non-null float64
+Mid-Career 25th Percentile Salary    273 non-null float64
+Mid-Career 75th Percentile Salary    273 non-null float64
+Mid-Career 90th Percentile Salary    273 non-null float64
+dtypes: float64(6), object(2)
+memory usage: 19.2+ KB
+"""
+
+#for plotting data
+_ = sns.set();
+_ = plt.figure();
+
+_ = region_data.plot(kind ='scatter',x='Starting Median Salary',y='Mid-Career 90th Percentile Salary');
+plt.show()
