@@ -25,7 +25,7 @@ print region_data.dtypes
 '''
 #todo plot by school on horizontal axis,vertical values , color by region,grid by levels of salary
 
-print region_data.info()
+#print region_data.info()
 
 """
 School Name                          273 non-null object
@@ -42,7 +42,10 @@ memory usage: 19.2+ KB
 
 #for plotting data
 _ = sns.set();
-_ = plt.figure();
-
-sns.swarmplot(x="Region", y="Starting Median Salary", data=region_data);
+fig = plt.figure(figsize=(20,20));
+ax = fig.add_subplot(1,1,1)
+ax2 = fig.add_subplot(2,1,1)
+sns.swarmplot(x="Region", y="Starting Median Salary", data=region_data,ax=ax)
+sns.boxplot(x="Region",  y="Starting Median Salary", data=region_data,ax=ax2)
 plt.show()
+#todo grid plots of box plot of region  vs all ranges of salary
