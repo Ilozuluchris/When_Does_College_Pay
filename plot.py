@@ -44,5 +44,5 @@ memory usage: 19.2+ KB
 _ = sns.set();
 _ = plt.figure();
 
-_ = region_data.plot(kind ='scatter',x='Starting Median Salary',y='Mid-Career 90th Percentile Salary');
+sns.swarmplot(x="Region", y="Starting Median Salary", data=region_data);
 plt.show()
